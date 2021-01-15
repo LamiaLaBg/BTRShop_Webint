@@ -8,8 +8,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/x-icon" href="/images/Logo_betterShop.png">
         <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href='style.css' rel="stylesheet">
         <link href="node_modules/jquery/dist/jquery.min.js" rel="script">
         <link href="node_modules/bootstrap/dist/js/bootstrap.min.js" rel="script">
+        <script src="laptop.js" ></script>
         <script src="app.js"></script>
     </head>
     
@@ -49,15 +51,15 @@
             </header>
             <!--MAIN CONTENT-->
             <section id="content"  class="center-block " style="height:100vh">
-                <div class="text-center">
+                <div class="text-center" id = 'below'>
                     <div class="mb-5 mt-5">
                         <img src="images/Logo_betterShop.png" width="200" height="200"alt="">
                     </div>
                     <!-- Search form -->
-                    <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2">
-                        <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
+                    <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2" id = 'wholesearch'>
+                        <input class="form-control form-control-sm mr-3 w-75" id = 'myInput' type="text" onkeyup="searchbar()" placeholder="Search"
                         aria-label="Search">
-                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <i class="fas fa-search" aria-hidden="true"></i><br>
                     </form>
                 </div>
             </section>
@@ -67,5 +69,6 @@
                 <p>Created by Hari, Clara, Lamia SALHI for the WebInt class 2020 @ Eurecom Insitute</p>
             </footer>
         </div>
-	</body>
+    </body>   
+
 </html>
