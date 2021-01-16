@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+        <title>BTRShopCode</title>
+        <base href="/">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="/images/Logo_betterShop.png">
+        <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="node_modules/jquery/dist/jquery.min.js" rel="script">
+        <link href="node_modules/bootstrap/dist/js/bootstrap.min.js" rel="script">
+        <link href='/register/register.css' rel="stylesheet">
+        <script src="/register/register.js"></script>
+    </head>
+    
+	<body onload="main()">
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <header>
+                <!-- toggle -->
+                <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ecfbfb;">
+                    <a class="navbar-brand" href="#">
+                        <img src="/images/Logo_betterShop.png" width="40" height="40" class="d-inline-block" alt="">
+                        BTRShop
+                        <span class="sr-only">(current)</span>
+                    </a>
+                   
+            
+                <!-- /#toggle -->
+            </header>
+            <!--MAIN CONTENT-->
+            <section id="content"  class="center-block " style="height:100vh">
+                <form id="registration-form" style="width: 500px; margin:auto;"onsubmit="return goToSearch()">
+                    <h1 > REGISTER </h1>
+                   
+
+                    <br><br><br>
+
+                    <div class="form-group">
+                        <b><label for="firstname">Enter your First Name</label></b>
+                        <input type="text" placeholder="First Name" name="firstname" id="firstname" class="form-control" required >
+                
+                    </div>
+                    <div class="form-group">
+                        <b><label for="lastname">Enter your Last Name</label></b>
+                        <input type="text" placeholder="Last Name" name="lastname" id="lastname" class="form-control" required >
+                    </div> 
+                    <div class="form-group">
+                        <b><label for="email">Enter your email</label></b>
+                    <input type="email" placeholder="Email" name="email" id="email" class="form-control" required >
+                
+                    </div>
+                    <div class="form-group">
+                        <label for="password"><b>Enter your password</b></label>
+                        <input type="text" placeholder="Password" name="password" id="password" class="form-control" required> 
+
+                    </div>
+                    <div class="form-group">
+                        <label for="passconf"><b>Confirm your password</b></label>
+                        <input type="text" placeholder="Password" name="passconf" id="passconf" class="form-control" required> 
+
+                    </div>
+                    
+                                
+                </form>
+            </section>
+        
+
+
+
+            <!--FOOTER-->
+            <footer id="foot_note">
+                <p>Created by Hari, Clara AKIKI, Lamia SALHI for the WebInt class 2020 @ Eurecom Insitute</p>
+            </footer>
+        </div>
+	</body>
+</html>

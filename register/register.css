@@ -6,13 +6,19 @@
 color: #4dd0e1;
 }
 
+*{font-family: Roboto;
+    font-style: normal;
+}
+
+input{
+    background: rgba(112, 217, 213, 0.15);
+border: 1px solid #000000;
+box-sizing: border-box;
+}
+
 label {
     display: block;
     margin: 4px ;
     padding-left: 4px ;
 }
-
-#up{text-align: center;}
-
-*{font-family: Roboto;
-    font-style: normal;
+h1{text-align: center;}

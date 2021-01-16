@@ -1,1 +1,63 @@
-<p>signin<p>
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+        <title>BTRShopCode</title>
+        <base href="/">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="/images/Logo_betterShop.png">
+        <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="node_modules/jquery/dist/jquery.min.js" rel="script">
+        <link href="node_modules/bootstrap/dist/js/bootstrap.min.js" rel="script">
+        <link href='/signin/signin.css' rel="stylesheet">
+        <script src="/signin/signin.js"></script>
+    </head>
+    
+	<body onload="main()">
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <header>
+                <!-- toggle -->
+                <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ecfbfb;">
+                    <a class="navbar-brand" href="#">
+                        <img src="/images/Logo_betterShop.png" width="40" height="40" class="d-inline-block" alt="">
+                        BTRShop
+                        <span class="sr-only">(current)</span>
+                    </a>
+                   
+            
+                <!-- /#toggle -->
+            </header>
+            <!--MAIN CONTENT-->
+            <section id="content"  class="center-block " style="height:100vh">
+                <form id="signin-form" style="width: 400px; margin:auto;"onsubmit="return goToSearch()">
+                    <div id="up">
+                        <h1 > LOG IN  </h1>
+                        <p>Welcome back! Login to access all the functionalities of our website.</p>
+                   
+                    </div>
+                    
+                    <br><br>
+                    
+                    <b><label for="email">Enter your email</label></b>
+                    <input type="email" placeholder="Email" name="email" id="email" class="form-control" required >
+                    <br>
+                    <label for="password"><b>Enter your password</b></label>
+                    <input type="text" placeholder="Password" name="password" id="password" class="form-control" required> <br>
+
+                    <a id="NotReg" href="../register/register.html">You are not registered?</a>
+                
+                   
+                </form>
+            </section>
+        
+            <!--FOOTER-->
+            <footer id="foot_note">
+                <p>Created by Hari, Clara, Lamia SALHI for the WebInt class 2020 @ Eurecom Insitute</p>
+            </footer>
+        </div>
+	</body>
+</html>
+
+
