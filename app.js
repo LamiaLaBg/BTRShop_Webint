@@ -19,120 +19,170 @@ function toggleDropdown(){
 
 function searchbar(){
     input = document.getElementById("myInput");
-    
     const val  = input.value
     var pro = data[val]
+
     if (pro){
         for(j = 0; j< 2;j++){
             var key = Object.keys(pro)[j];
             //console.log(pro.key);
 
+        var mainnode = document.getElementById('articles');
 
-
-        var mainnode = document.getElementById('content');
-        var linebreak = document.createElement('br');
+        //var linebreak = document.createElement('br');
         var div = document.createElement('div');  //main div element for each item
-        
+        div.setAttribute('id','article'+ j);
         div.style.paddingTop = '50px';
+
+        //create tags here
+
+        var divTitle = document.createElement('div');  
+        divTitle.setAttribute('id','divTitle'+j);
+        divTitle.setAttribute('class','row justify-content-center');
         
+        //h1 tag for title 
+        var h1titre = document.createElement('h5');
+        var h1rate = document.createElement('h5');
+        var text = document.createTextNode((j+1)+".\u00A0"+pro[key].title);
+        var rate= document.createTextNode("Rating - "+pro[key].rating);
+        h1titre.appendChild(text);
+        h1rate.appendChild(rate);
+
+        h1titre.setAttribute('class',"col-4 ")
+        h1rate.setAttribute('class',"col-4 text-right")
+
+        divTitle.appendChild(h1titre);
+        divTitle.appendChild(h1rate);
+
+        div.appendChild(divTitle);
         
-
-
-    //create tags here
-
-    //h1 tag for title 
-        var h1 = document.createElement('h5');
-        var text = document.createTextNode((j+1)+".\u00A0"+pro[key].title+'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'.repeat(10)+"Rating - "+pro[key].rating);
-        h1.appendChild(text);
-        h1.appendChild(linebreak);
-        div.appendChild(h1);
-        div.appendChild(linebreak);
-        div.appendChild(linebreak);
-        h1.style.textAlign = 'center';
-        h1.style.padding = '10px';
+        //h1titre.style.textAlign = 'center';
+        //h1rate.style.textAlign = 'center';
     
 
-    //image and description
-       var p1 = document.createElement('p');
-       var img = document.createElement('img');
-       var p2 = document.createElement('p');
-       var text = document.createTextNode(pro[key].comment);
-       img.src = pro[key].image
-       p1.appendChild(img); //append image
-       p2.appendChild(text); //append text to p2
-       div.appendChild(p1);   //append p1 to div
-       div.appendChild(p2);
-       p1.style.textAlign = 'center';
-       p2.style.textAlign = 'center';
 
-    
-    var p3 = document.createElement('p'); // paragraph element to add pros and cons
+        // creation of div and styling
+        var divDescription = document.createElement('div');
+        divDescription.setAttribute('id','divDescription'+j);
+        divDescription.setAttribute('class', "row justify-content-center")
+
+        var divDescriptionImg = document.createElement('div');
+        divDescriptionImg.setAttribute('id','divDescriptionImg'+j);
+        divDescriptionImg.setAttribute('class', "col-4 ");
+
+        var divDescriptionText = document.createElement('div');
+        divDescriptionText.setAttribute('id','divDescriptionText'+j);
+        divDescriptionText.setAttribute('class', "col-3 ");
+
+        
+        divDescription.appendChild(divDescriptionImg);
+        divDescription.appendChild(divDescriptionText);
+        div.appendChild(divDescription);
 
 
-    // Buying link here
-    var p4 = document.createElement('p');
-    var buy = document.createElement('a');
-    var text = document.createTextNode('BUY HERE');
-    buy.href = pro[key].website;
-    buy.appendChild(text);
-    buy.style.color = 'red';
-    p4.appendChild(buy);
-    div.appendChild(p4); 
+        // adding image in divDescriptionImg
+        var img = document.createElement('img');
+        img.src = pro[key].image
+        divDescriptionImg.appendChild(img); //append image
+
+
+        //addin description in details
+        var description_details=document.createElement("details");
+        var p2 = document.createElement('p');
+        var text = document.createTextNode(pro[key].comment);
+        
+        description_details.appendChild(p2)
+        p2.appendChild(text);
+        divDescriptionText.appendChild(description_details);
+
+        //addind link to the website product divDescriptionText
+
+        // Buying link here
+        
+
+
+        //var p4 = document.createElement('p');
+        //var buy = document.createElement('a');
+        var buttonGoto= document.createElement('button');
+        buttonGoto.setAttribute('class', 'btn btn-info')
+        buttonGoto.innerHTML='Go to website'
+        //var textGoto = document.createTextNode('Go to website');
+        var link = pro[key].website;
+        //buttonGoto.onclick="self.location.href='"+link+"'";
+        //buttonGoto.setAttribute('onclick',"console.log("+link+")");
+
+        buttonGoto.onclick = function(){
+            self.location.href=link;
+            console.log(link);
+        }
+        
+        divDescriptionText.appendChild(buttonGoto);
+
+        /*
+        buy.appendChild(textGoto);
+        buy.style.color = 'red';
+        p4.appendChild(buy);
+        */
+
+        //
    
-   //adding pros here 
-    
-    var ul1 = document.createElement('ul');  // adding pros and cons
-    var pros = pro[key].positive.split(",");
-    ul1.appendChild(document.createElement('h4').appendChild(document.createTextNode('PROS')));
-    for(i=0;i<pros.length;i++){
-        var li = document.createElement('li');
-        li.appendChild(document.createTextNode(pros[i]));
-        ul1.appendChild(li)
-    }
-   //ul1 styling here 
-    //ul1.style.float = 'left';
-  //appending ul1 to div here
-    div.appendChild(ul1);
-
-
-    
-
-
-    //adding cons here
-    var ul2 = document.createElement('ul');  
-    var cons = pro[key].negative.split(",");
-    ul2.appendChild(document.createElement('h4').appendChild(document.createTextNode('CONS')));
-    for(i=0;i<cons.length;i++){
-        var li = document.createElement('li');
-        li.appendChild(document.createTextNode(cons[i]));
-        ul2.appendChild(li)
-    }
-   //ul2 styling below 
-    ul2.style.float = 'right';
-    ul2.style.paddingBottom = '50px';
-
     
     
-    div.appendChild(ul2);
+        // creation of the pros and cons div
+        var divlistrow =  document.createElement('div');
+        divlistrow.setAttribute('id','listrowarticle'+ j);
+        divlistrow.setAttribute('class','row justify-content-center');
 
-    
-    
+        //adding pros here 
+        var emojihappy = document.createElement('img');
+        emojihappy.setAttribute('src',"/images/emoji-happy.png");
 
+        var ul1 = document.createElement('ul');  // adding pros and cons
+        var pros = pro[key].positive.split(",");
 
-    
-
-
-
-     
-
-        div.appendChild(linebreak);
-        mainnode.appendChild(div); //append div to mainnode
+        ul1.appendChild(document.createElement('h4').appendChild(document.createTextNode('PROS')));
+        ul1.appendChild(emojihappy);
+        emojihappy.setAttribute("height", "10%");
+        emojihappy.setAttribute("class", "center");
+        for(i=0;i<pros.length;i++){
+            var li = document.createElement('li');
+            li.appendChild(document.createTextNode(pros[i]));
+            ul1.appendChild(li)
+        }
         
-        mainnode.appendChild(linebreak);
 
+        //adding cons here
+        var emojiUnhappy = document.createElement('img');
+        emojiUnhappy.setAttribute('src',"/images/emoji-unhappy.jpeg");
 
+        var ul2 = document.createElement('ul');  
+        var cons = pro[key].negative.split(",");
+
+        ul2.appendChild(document.createElement('h4').appendChild(document.createTextNode('CONS')));
+        ul2.appendChild(emojiUnhappy);
+        emojiUnhappy.setAttribute("height", "10%");
+        for(i=0;i<cons.length;i++){
+            var li = document.createElement('li');
+            li.appendChild(document.createTextNode(cons[i]));
+            ul2.appendChild(li)
         }
 
-}
-    
+        
+
+        //appending ul1 and ul2 to div here 
+        divlistrow.appendChild(ul1);
+        divlistrow.appendChild(ul2);
+        div.appendChild(divlistrow);
+
+        //ul1 and ul2 styling here 
+        ul1.setAttribute('class',"col-4");
+        ul2.setAttribute('class',"col-3");
+        
+
+        mainnode.appendChild(div); //append div to mainnode
+        //mainnode.appendChild(linebreak);
+        
+        }
+        
+    }
 }
