@@ -22,8 +22,11 @@ function main(){
     document.getElementById("lastname").value=user[1];
     document.getElementById("email").value=user[2];
     document.getElementById("phone_num").value=user[5];
-    alert(user[6].value)
     document.getElementById("image").src=user[6];
+
+    users=JSON.parse(sessionStorage.getItem('users')) ;        
+    document.getElementById("name-dropdown").textContent=users[users.length-1][0]+ " "+ users[users.length-1][1];
+    
 }
 
 
@@ -33,7 +36,7 @@ function updateInfo(){
     var lastname= document.getElementById("lastname").value;
     var email= document.getElementById("email").value;
     var phone_num= document.getElementById("phone_num").value;
-
+    var imgpath=document.getElementById("image").src;
     users= JSON.parse(window.sessionStorage.getItem('users'));
 
     user= users.pop();
@@ -44,7 +47,7 @@ function updateInfo(){
     if(phone_num){
         user[5]=phone_num;
     }
-    
+    user[6]=imgpath;
     users.push(user);
     window.sessionStorage.setItem('users', JSON.stringify(users));
     
