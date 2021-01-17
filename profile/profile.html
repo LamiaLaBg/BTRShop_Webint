@@ -54,7 +54,7 @@
                 <form id="profile-form" class="text-center" style="width: 600px; margin:auto;"onsubmit="return updateInfo()">
                     
                     <div class="form-group">
-                        <img class="rounded-circle z-depth-2" alt="profile picture" width="140" height="140" src="/images/clara.jpeg" data-holder-rendered="true">
+                        <img id="image"class="rounded-circle z-depth-2" alt="profile picture" width="140" height="140" src="/images/generic-profile.png" onclick="return importImage()" data-holder-rendered="true">
                     </div>
 
                     <br><br>
@@ -77,11 +77,15 @@
                     </div>
                     
                     <div class="form-group">
-                        <input type="email" placeholder="name@example.com" name="email" id="email" required class="form-control"><br>
+                        <input type="email" placeholder="name@example.com" name="email" id="email" required readonly class="form-control"><br>
                     </div>
 
                     <div class="form-group">
                         <input  type="tel" placeholder="+33 0 00 00 00 00" name="phone_num" id="phone_num" pattern="^\+(?:[0-9] ?){6,14}[0-9]$"  class="form-control"><br>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="updateBtn" id="updateBtn" >Update</button>
                     </div>
 
                 </form>

@@ -12,6 +12,9 @@ body{background-color: #d7dbdb;}
     text-align: center;
 }
 
+.container{
+    text-align: center;
+}
 
 *{font-family: Roboto;
     font-style: normal;

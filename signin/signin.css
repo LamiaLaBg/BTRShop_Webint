@@ -16,3 +16,13 @@ label {
 
 *{font-family: Roboto;
     font-style: normal;
+}
+
+#loginBtn{
+    width: 167px;
+    height: 70px;
+    background: rgba(112, 217, 213, 0.5);
+    border-radius: 30px; 
+    text-align:center;  
+}
+

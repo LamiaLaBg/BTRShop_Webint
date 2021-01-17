@@ -2,6 +2,16 @@ let toggleBtn = document.getElementById('menu-toggle');
 let sidebarWrapper = document.getElementById('wrapper');
 function main() {
     // check whether we are logged in or not
+    var online= window.sessionStorage['online'] || "false";
+    if(online == "true"){
+        document.getElementById("signin").style.display="none";
+        users=window.sessionStorage['users'];
+        document.getElementById("name-dropdown").value= users[users.length-1];
+    }else{
+        document.getElementById("profile").style.display="none";
+        document.getElementById("logout").style.display="none";
+    }
+    return false;
 
 }
 
@@ -16,11 +26,10 @@ function toggleDropdown(){
 
 
 //search bar function here
-
 function searchbar(){
     input = document.getElementById("myInput");
-    const val  = input.value
-    var pro = data[val]
+    const val  = input.value;
+    var pro = data[val];
 
     if (pro){
         for(j = 0; j< 2;j++){
@@ -126,7 +135,6 @@ function searchbar(){
 
         //
    
-    
     
         // creation of the pros and cons div
         var divlistrow =  document.createElement('div');

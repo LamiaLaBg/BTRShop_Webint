@@ -11,7 +11,7 @@
         <link href='/logout/logout.css' rel="stylesheet">
         <link href="node_modules/jquery/dist/jquery.min.js" rel="script">
         <link href="node_modules/bootstrap/dist/js/bootstrap.min.js" rel="script">
-        <script src="/logout.logout.js"></script>
+        <script src="/logout/logout.js"></script>
     </head>
     
 	<body onload="main()">
@@ -20,6 +20,7 @@
             
             <!--MAIN CONTENT-->
             <section class="Form m-4 " style="height:100vh">
+                <form id="logout-form" style="width: 500px; margin:auto;"onsubmit="return removeLoggedUser()">
                 <div class="container" >
                     <div class="row justify-content-center align-items-center">
                         <br><br>
@@ -50,6 +51,7 @@
 
                     </div>
                 </div>
+                </form>
             </section>
         
 

@@ -22,3 +22,12 @@ label {
     padding-left: 4px ;
 }
 h1{text-align: center;}
+
+#registerBtn{
+    width: 167px;
+    height: 70px;
+    background: rgba(112, 217, 213, 0.5);
+    border-radius: 30px; 
+    
+}
+
