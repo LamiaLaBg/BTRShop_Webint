@@ -172,11 +172,75 @@ function searchbar(){
         //appending ul1 and ul2 to div here 
         divlistrow.appendChild(ul1);
         divlistrow.appendChild(ul2);
-        div.appendChild(divlistrow);
+        //div.appendChild(divlistrow);
 
         //ul1 and ul2 styling here 
         ul1.setAttribute('class',"col-4");
-        ul2.setAttribute('class',"col-3");
+        ul2.setAttribute('class',"col-4");
+
+        //comment box
+        var mandiv = document.createElement('div') //main div tag to store the comment box
+        mandiv.setAttribute("id", "best_c"+j)
+        
+        
+        
+
+        //best comment element
+        mandiv.appendChild(document.createTextNode('Best Comments'));
+        mandiv.setAttribute('class', 'row');
+        
+       
+
+        //adding girl image 
+        var img_div = document.createElement('div') //div tag to hold image
+        img_div.setAttribute("id", "img_div"+j);
+        img_div.setAttribute('class','row');
+        var girl = document.createElement('img');
+        girl.setAttribute('src',"/images/girl.png");
+        girl.setAttribute("width", "10%");
+        girl.setAttribute("height", "40%");
+        img_div.appendChild(girl);
+        
+        //mandiv.appendChild(img_div);
+        girl.setAttribute('class', "col-4");
+
+
+
+        //adding user name
+        var usr = document.createElement('h6');
+        var linebreak = document.createElement('br');
+        if (j===0){
+
+            usr.appendChild(document.createTextNode('user@batman\n'))
+            usr.appendChild(linebreak)
+            usr.appendChild(linebreak)
+            
+            usr.appendChild(document.createTextNode('Great performance and best in class features'))
+        }
+        else{
+            usr.appendChild(document.createTextNode('user@superman\n'))
+            usr.appendChild(linebreak);
+            usr.appendChild(linebreak)
+            
+            usr.appendChild(document.createTextNode('Great design and amazing battery life'))
+        }
+        
+        img_div.appendChild(usr)
+        mandiv.appendChild(img_div);
+        usr.setAttribute('class', "col-8")
+
+
+
+        mandiv.appendChild(img_div);
+        divlistrow.appendChild(mandiv);
+
+
+
+
+
+        //append mandiv to div
+        div.appendChild(divlistrow);
+
         
 
         mainnode.appendChild(div); //append div to mainnode
