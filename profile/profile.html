@@ -54,7 +54,10 @@
                 <form id="profile-form" class="text-center" style="width: 600px; margin:auto;"onsubmit="return updateInfo()">
                     
                     <div class="form-group">
-                        <img id="image"class="rounded-circle z-depth-2" alt="profile picture" width="140" height="140" src="/images/generic-profile.png" onclick="return importImage()" data-holder-rendered="true">
+                        <img id="image"class="rounded-circle z-depth-2" alt="profile picture" width="140" height="140" src="/images/generic-profile.png"  data-holder-rendered="true">
+
+                        <br>
+                        <input type="file" onchange="importImage()">
                     </div>
 
                     <br><br>

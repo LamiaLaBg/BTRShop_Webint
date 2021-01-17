@@ -22,6 +22,8 @@ function main(){
     document.getElementById("lastname").value=user[1];
     document.getElementById("email").value=user[2];
     document.getElementById("phone_num").value=user[5];
+    alert(user[6].value)
+    document.getElementById("image").src=user[6];
 }
 
 
@@ -49,18 +51,31 @@ function updateInfo(){
 }
 
 function importImage(){
-    alert("HI")
-    var widget = cloudinary.applyUploadWidget({ 
-        cloudName: 'demo', 
-        uploadPreset: 'blog_upload' }, 
-        (error, result) => { 
-           if (!error && result && result.event === "success") { 
-                console.log('Done uploading..: ', result.info); 
-              }
-    
-         }); 
+    const preview = document.getElementById("image");
+    const file = document.querySelector('input[type=file]').files[0];
+    const reader = new FileReader();
 
-    myWidget.open();
-    return false;
-      
+    reader.addEventListener("load", function () {
+    // convert image file to base64 string
+    preview.src = reader.result;
+    }, false);
+
+    if (file) {
+    reader.readAsDataURL(file);
+    }
 }
+
+
+function convertImageToBase64(img) {
+    var canvas = document.createElement("canvas");
+    canvas.width = img.width;
+    canvas.height = img.height;
+
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+
+    var dataURL = canvas.toDataURL("image/png");
+
+    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+}
+
