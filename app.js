@@ -256,7 +256,7 @@ function searchbar(){
         var usr = document.createElement('h6');
         var comment= document.createElement('h6');
         usr.appendChild(document.createTextNode(pro[key].user+" says"))
-        comment.appendChild(document.createTextNode(pro[key].says))
+            comment.appendChild(document.createTextNode(pro[key].says))
         
         img_div.appendChild(usr);
         mandiv.appendChild(img_div);
