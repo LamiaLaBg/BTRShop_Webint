@@ -7,7 +7,9 @@ var data = {
 "website":"https://www.dell.com/en-us/shop/cty/pdp/spd/alienware-m15-r3-laptop?AID=5226272&cjevent=dd6349e44de311eb83d808200a18050d&gacd=9694607-23736398-5750457-266319267-127795103&dgc=af&VEN1=12578053-5226272-04bl38gY1zvxws2G09n9USn&dclid=CJ_-m7ucgO4CFY0t0wod8vAJ6g",
 "comment": "The Alienware m15 R3 is a powerful and affordable high-end gaming laptop, with a uniquely styled design that sets it apart from a competitive field., Enough power to utilize its 300Hz display in competitive multiplayer games, 1TB of SSD storage and plenty of useful ports, Handy features include Wi-Fi 6 and customizable chassis and per-key lighting",
 "positive": "Stand-out aesthetic,Fast overall speed and potent gaming performance at a lower price than premium competitors",
-"negative" :"Brief battery life, Design may not be for everyone"
+"negative" :"Brief battery life, Design may not be for everyone",
+"user": "Superman",
+"says": "Amazing performance and best gaming laptop"
 },
 
 "item2": {
@@ -17,7 +19,9 @@ var data = {
 "website": "https://www.amazon.com/Apple-MacBook-13-inch-256GB-Storage/dp/B08N5LNQCX?tag=p00935-20&ascsubtag=0786rm1JQpdBABsqa4wz2Uj",
 "comment": "The M1-equipped MacBook Air now packs far better performance than its predecessors, rivaling at times the M1-based MacBook Pro. At $999, it’s the best value among macOS laptops.",
 "positive": "Good value,especially for a MacBook,Much-improved performance thanks to Apple’s new M1 processor",
-"negative": "Port selection limited to two USB Type-C connections, Still no touch-screen option"
+"negative": "Port selection limited to two USB Type-C connections, Still no touch-screen option",
+"user": "Batman",
+"says": "Great design and good battery life"
 }
 }
 };

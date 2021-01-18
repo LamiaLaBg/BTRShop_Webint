@@ -255,14 +255,8 @@ function searchbar(){
         //adding user name
         var usr = document.createElement('h6');
         var comment= document.createElement('h6');
-        if (j===0){
-            usr.appendChild(document.createTextNode('user@batman\n'))
-            comment.appendChild(document.createTextNode('Great performance and best in class features'))
-        }
-        else{
-            usr.appendChild(document.createTextNode('user@superman\n'))
-            comment.appendChild(document.createTextNode('Great design and amazing battery life'))
-        }
+        usr.appendChild(document.createTextNode(pro[key].user+" says"))
+        comment.appendChild(document.createTextNode(pro[key].says))
         
         img_div.appendChild(usr);
         mandiv.appendChild(img_div);
