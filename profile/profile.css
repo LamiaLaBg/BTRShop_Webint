@@ -11,3 +11,7 @@
     background: rgba(112, 217, 213, 0.5);
     border-radius: 30px;  
 }
+
+#map{
+    height: 200px
+}

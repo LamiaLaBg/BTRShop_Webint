@@ -23,7 +23,6 @@ function main(){
     document.getElementById("email").value=user[2];
     document.getElementById("phone_num").value=user[5];
     document.getElementById("image").src=user[6];
-
     users=JSON.parse(sessionStorage.getItem('users')) ;        
     document.getElementById("name-dropdown").textContent=users[users.length-1][0]+ " "+ users[users.length-1][1];
     
@@ -64,21 +63,25 @@ function importImage(){
     }, false);
 
     if (file) {
-    reader.readAsDataURL(file);
+        reader.readAsDataURL(file);
     }
 }
 
-
-function convertImageToBase64(img) {
-    var canvas = document.createElement("canvas");
-    canvas.width = img.width;
-    canvas.height = img.height;
-
-    var ctx = canvas.getContext("2d");
-    ctx.drawImage(img, 0, 0);
-
-    var dataURL = canvas.toDataURL("image/png");
-
-    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+function displayLocation(){
+    navigator.geolocation.getCurrentPosition(drawMap)
 }
 
+
+function drawMap(pos){
+
+    var center = [pos.coords.latitude, pos.coords.longitude]
+    // Create the map
+    var map = L.map('map').setView(center, 12);
+    // Set up the OSM layer
+    L.tileLayer(
+    'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18
+    }).addTo(map);
+    // add a marker in the given location
+    L.marker(center).addTo(map);
+}

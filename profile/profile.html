@@ -12,7 +12,10 @@
         <link href="node_modules/bootstrap/dist/js/bootstrap.min.js" rel="script">
         <link href='/profile/profile.css' rel="stylesheet">
         <script src="/profile/profile.js"></script>
-    </head>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  </head>
     
 	<body onload="main()">
         <!-- Page Content -->
@@ -91,8 +94,13 @@
                         <button type="submit" class="updateBtn" id="updateBtn" >Update</button>
                     </div>
 
+                    <div class="form-group" id="map">
+                        <button type="button" onClick="return displayLocation()" class="mapBtn" id="mapBtn" >Display Map</button>
+                    </div>
+                    <br><br><br><br><br><br><br><br>
                 </form>
             </section>
+            
         
             <!--FOOTER-->
             <footer id="foot_note">

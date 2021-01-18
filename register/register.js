@@ -8,8 +8,9 @@ function createUser(){
     var pass= document.querySelector('#password').value;
     var passconf = document.querySelector('#passconf').value;
     var phonenum= "";
+    var imgprof="/images/generic-profile.png";
 
-    var newUser=[firstname , lastname,  email, pass, passconf, phonenum];
+    var newUser=[firstname , lastname,  email, pass, passconf, phonenum,imgprof];
 
 
     //get all registered users
