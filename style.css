@@ -12,4 +12,23 @@ color: #4dd0e1;
     width: 100%;
     text-align: center;
   }
-  
+
+  video {
+	width:300px;
+	max-width: 100%;
+	background: black;
+	border: 1px solid #999999;
+	display: inline;
+	margin: 0px auto 3px;
+	padding: 6px;
+}
+ul{
+    border:1px solid #000;
+    margin:0; 
+    padding:0;
+}
+
+li{
+    margin:0;
+    padding:0;
+}
