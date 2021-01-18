@@ -33,8 +33,9 @@ function searchbar(){
     input = document.getElementById("myInput");
     const val  = input.value;
     var pro = data[val];
-
-    if (pro){
+    var i = 0;
+    if (pro && i===0){
+        i=1;
         for(j = 0; j< 2;j++){
             var key = Object.keys(pro)[j];
             //console.log(pro.key);
@@ -239,7 +240,7 @@ function searchbar(){
         img_div.setAttribute("id", "img_div"+j);
         img_div.setAttribute('class','row justify-content-center');
         var girl = document.createElement('img');
-        girl.setAttribute('src',"/images/girl.png");
+        girl.setAttribute('src',"/images/lamia_photo.jpeg");
         girl.setAttribute("class", "center");
         girl.setAttribute("height", "5%");
         img_div.appendChild(girl);
