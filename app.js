@@ -5,10 +5,10 @@ let video_add= document.getElementById('videoAdd')
 function main() {
 
     // check whether we are logged in or not
-    var online= window.sessionStorage['online'] || "false";
+    var online= window.localStorage['online'] || "false";
     if(online == "true"){
         document.getElementById("signin").style.display="none";
-        users=JSON.parse(sessionStorage.getItem('users')) ;        
+        users=JSON.parse(localStorage.getItem('users')) ;        
         document.getElementById("name-dropdown").textContent=users[users.length-1][0]+ " "+ users[users.length-1][1];
     }else{
         document.getElementById("name-dropdown").style.display="none";
@@ -50,8 +50,7 @@ function searchbar(input){
         //var linebreak = document.createElement('br');
         var div = document.createElement('div');  //main div element for each item
         div.setAttribute('id','article');
-        div.setAttribute('class', 'ml-4 mr-4')
-        div.style.paddingTop = '50px';
+        div.setAttribute('class', 'ml-5 mr-5')
 
         //create tags here
         var divTitle = document.createElement('div');  
@@ -67,8 +66,8 @@ function searchbar(input){
         h1titre.appendChild(text);
         h1rate.appendChild(rate);
 
-        h1titre.setAttribute('class',"col-4 ")
-        h1rate.setAttribute('class',"col-4 text-right")
+        h1titre.setAttribute('class',"col-sm-4 ")
+        h1rate.setAttribute('class',"col-sm-4 text-right")
 
         divTitle.appendChild(h1titre);
         divTitle.appendChild(h1rate);
@@ -85,11 +84,11 @@ function searchbar(input){
 
         var divDescriptionImg = document.createElement('div');
         divDescriptionImg.setAttribute('id','divDescriptionImg'+j);
-        divDescriptionImg.setAttribute('class', "col-4 ");
+        divDescriptionImg.setAttribute('class', "col-sm-4 ");
 
         var divDescriptionText = document.createElement('div');
         divDescriptionText.setAttribute('id','divDescriptionText'+j);
-        divDescriptionText.setAttribute('class', "col-3 ");
+        divDescriptionText.setAttribute('class', "col-sm-3 ");
 
         
         divDescription.appendChild(divDescriptionImg);
@@ -149,63 +148,99 @@ function searchbar(input){
         var divTitlespros_and_cons =  document.createElement('div');
         divTitlespros_and_cons.setAttribute('id','divTitlespros_and_cons'+ j);
         divTitlespros_and_cons.setAttribute('class','row justify-content-center');
+        /*
+        //create pros division:
+        var divTitlespros =  document.createElement('div');
+        divTitlespros.setAttribute('id','divTitlespros'+ j);
+        divTitlespros.setAttribute('class','col-sm-4');
+        divTitlespros_and_cons.appendChild(divTitlespros)
 
         //add pros title and the unhappy emoji:
         var emojihappy = document.createElement('img');
         emojihappy.setAttribute('src',"/images/emoji-happy.png");
         
-        divTitlespros_and_cons.appendChild(emojihappy);
+        divTitlespros.appendChild(emojihappy);
         h_pros= document.createElement('h4');
         h_pros.appendChild(document.createTextNode('PROS'));
-        h_pros.setAttribute("class", "col-sm-3");
-        divTitlespros_and_cons.appendChild(h_pros);
+        //h_pros.setAttribute("class", "col-sm-1");
+        divTitlespros.appendChild(h_pros);
         
         //styling emoji image
         emojihappy.setAttribute("height", "10%");
-        emojihappy.setAttribute("class", "col-sm-1 ");
+        //emojihappy.setAttribute("class", "col-sm-1 left");
+        //emojihappy.style.maxWidth= "20%" ;
 
+        // create cons div
+        //creation the div pros and cons titles:
+        var divTitlescons =  document.createElement('div');
+        divTitlescons.setAttribute('id','divTitlescons'+ j);
+        divTitlescons.setAttribute('class','col-sm-4');
+        divTitlespros_and_cons.appendChild(divTitlescons);
 
         //adding cons here
         var emojiUnhappy = document.createElement('img');
-        emojiUnhappy.setAttribute('src',"/images/emoji-unhappy.png");
-
+        emojiUnhappy.setAttribute('src',"/images/emoji-unhappy.jpeg");
+        //emojiUnhappy.style.maxWidth= "20%" ;
         //add cons title and the unhappy emoji
-        divTitlespros_and_cons.appendChild(emojiUnhappy);
+        divTitlescons.appendChild(emojiUnhappy);
         h_cons= document.createElement('h4');
         h_cons.appendChild(document.createTextNode('CONS'));
-        h_cons.setAttribute("class", "col-sm-4");
-        divTitlespros_and_cons.appendChild(h_cons);
-
+        //h_cons.setAttribute("class", "col-sm-1");
+        divTitlescons.appendChild(h_cons);
+        
         //styling emoji image
         emojiUnhappy.setAttribute("height", "10%");
-        emojiUnhappy.setAttribute("class", "col-sm-1");
+        //emojiUnhappy.setAttribute("class", "col-sm-1");
         
         div.appendChild(divTitlespros_and_cons);
+        */
+       
         // creation of the div and the ul (list) of and  pros and cons div
         var divlistrow =  document.createElement('div');
-        divlistrow.setAttribute('id','listrowarticle');
+        divlistrow.setAttribute('id','listrowarticle'+ j);
         divlistrow.setAttribute('class','row justify-content-center');
+        
+        //add pros title and the unhappy emoji:
+        var emojihappy = document.createElement('img');
+        emojihappy.setAttribute('src',"/images/emoji-happy.png");
+        //styling emoji image
+        emojihappy.setAttribute("height", "10%");
+        h_pros= document.createElement('h4');
+        h_pros.appendChild(document.createTextNode('PROS'));
+        
 
         //pros ul
         var ul1 = document.createElement('ul');  // adding pros and cons
         var pros = pro[key].positive.split(",");
+        ul1.appendChild(h_pros);
+        ul1.appendChild(emojihappy);
         for(i=0;i<pros.length;i++){
             var li = document.createElement('li');
             li.appendChild(document.createTextNode(pros[i]));
             ul1.appendChild(li)
-            li.style.margin= 0; 
-            li.style.padding= 0;
+          
         }
-    
+        
+
+        //add cons title and the unhappy emoji:
+        var emojiUnhappy = document.createElement('img');
+        emojiUnhappy.setAttribute('src',"/images/emoji-unhappy.png");
+        //styling emoji image
+        emojiUnhappy.setAttribute("height", "10%");
+        h_cons= document.createElement('h4');
+        h_cons.appendChild(document.createTextNode('CONS'));
+        
+        
         //cons ul
         var ul2 = document.createElement('ul');
         var cons = pro[key].negative.split(",");
+        ul2.appendChild(h_cons);
+        ul2.appendChild(emojiUnhappy);
         for(i=0;i<cons.length;i++){
             var li = document.createElement('li');
             li.appendChild(document.createTextNode(cons[i]));
             ul2.appendChild(li)
-            li.style.margin= 0; 
-            li.style.padding= 0;
+          
         }
 
         
@@ -214,11 +249,7 @@ function searchbar(input){
         divlistrow.appendChild(ul1);
         divlistrow.appendChild(ul2);
 
-        //ul1 and ul2 styling here 
-        ul1.style.margin= 0; 
-        ul1.style.padding= 0;
-        ul2.style.margin= 0; 
-        ul2.style.padding= 0;
+        
         ul1.setAttribute('class',"col-sm-4");
         ul2.setAttribute('class',"col-sm-4");
         
@@ -241,7 +272,7 @@ function searchbar(input){
         divcomment.setAttribute('class','row justify-content-center');
 
         var p_bestCom = document.createElement('strong');
-        p_bestCom.setAttribute('class', 'col-8 left')
+        p_bestCom.setAttribute('class', 'col-sm-8 left')
         p_bestCom.appendChild(document.createElement("br"))
         p_bestCom.appendChild(document.createElement("br"))
 
@@ -279,7 +310,7 @@ function searchbar(input){
         
         img_div.appendChild(usr);
         mandiv.appendChild(img_div);
-        usr.setAttribute('class', "col-7")
+        usr.setAttribute('class', "col-sm-7")
         
 
         //appending divcomment to the div article i
@@ -291,7 +322,7 @@ function searchbar(input){
         
         comment_info_div.appendChild(comment);
         mandiv.appendChild(comment_info_div);
-        comment.setAttribute('class', "col-8")
+        comment.setAttribute('class', "col-sm-8")
 
         
 

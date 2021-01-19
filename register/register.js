@@ -14,7 +14,7 @@ function createUser(){
 
 
     //get all registered users
-    users= JSON.parse(sessionStorage.getItem('users')) || [];
+    users= JSON.parse(localStorage.getItem('users')) || [];
     //check if the new user exist in the registered users
     var exist= false;
     //check if the pass & passconf are the same
@@ -43,14 +43,14 @@ function createUser(){
         document.querySelector('#passconf').value="";
     }else if(exist){
         alert("You already have an account, we are logging you in!")
-        window.sessionStorage.setItem('users', JSON.stringify(users));
-        window.sessionStorage.setItem('online', "true");
+        window.localStorage.setItem('users', JSON.stringify(users));
+        window.localStorage.setItem('online', "true");
         goToSearch();
     }else{
         alert("New user is created");
         //store new user  
-        window.sessionStorage.setItem('users', JSON.stringify(users));
-        window.sessionStorage.setItem('online', "true");
+        window.localStorage.setItem('users', JSON.stringify(users));
+        window.localStorage.setItem('online', "true");
         // //go to add search for products
         goToSearch();
     }

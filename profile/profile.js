@@ -16,14 +16,14 @@ function toggleDropdown(){
 
 function main(){
     //load info about user
-    var users = JSON.parse(window.sessionStorage.getItem('users'));
+    var users = JSON.parse(window.localStorage.getItem('users'));
     user=users[users.length -1]
     document.getElementById("firstname").value=user[0];
     document.getElementById("lastname").value=user[1];
     document.getElementById("email").value=user[2];
     document.getElementById("phone_num").value=user[5];
     document.getElementById("image").src=user[6];
-    users=JSON.parse(sessionStorage.getItem('users')) ;        
+    users=JSON.parse(localStorage.getItem('users')) ;        
     document.getElementById("name-dropdown").textContent=users[users.length-1][0]+ " "+ users[users.length-1][1];
     
 }
@@ -36,7 +36,7 @@ function updateInfo(){
     var email= document.getElementById("email").value;
     var phone_num= document.getElementById("phone_num").value;
     var imgpath=document.getElementById("image").src;
-    users= JSON.parse(window.sessionStorage.getItem('users'));
+    users= JSON.parse(window.localStorage.getItem('users'));
 
     user= users.pop();
 
@@ -48,7 +48,7 @@ function updateInfo(){
     }
     user[6]=imgpath;
     users.push(user);
-    window.sessionStorage.setItem('users', JSON.stringify(users));
+    window.localStorage.setItem('users', JSON.stringify(users));
     
 }
 

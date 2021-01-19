@@ -16,10 +16,10 @@ function toggleDropdown(){
 
 function main(){
     // check whether we are logged in or not
-    var online= window.sessionStorage['online'] || "false";
+    var online= window.localStorage['online'] || "false";
     if(online == "true"){
         document.getElementById("signin").style.display="none";
-        users=JSON.parse(sessionStorage.getItem('users')) ;        
+        users=JSON.parse(localStorage.getItem('users')) ;        
         document.getElementById("name-dropdown").textContent=users[users.length-1][0]+ " "+ users[users.length-1][1];
     }else{
         document.getElementById("name-dropdown").style.display="none";

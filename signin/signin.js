@@ -7,7 +7,7 @@ function goToSearch(){
 function checkUser(){
     var newUser=[document.querySelector('#email').value, document.querySelector('#password').value ];
             //get all registered users
-            users= JSON.parse(sessionStorage.getItem('users')) || [];
+            users= JSON.parse(localStorage.getItem('users')) || [];
             //check if the new user exist in the registered users
             var exist= false;
             for (let i=0; i<users.length; i++){
@@ -20,8 +20,8 @@ function checkUser(){
             }
 
             if(exist){
-                window.sessionStorage.setItem('loggedUser', currentUser);
-                window.sessionStorage.setItem('online', "true");
+                window.localStorage.setItem('loggedUser', currentUser);
+                window.localStorage.setItem('online', "true");
                 document.location.href="index.html"; //////change
                 return false;
             }else{
