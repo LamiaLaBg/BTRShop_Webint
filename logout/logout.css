@@ -12,13 +12,16 @@ body{background-color: #d7dbdb;}
     text-align: center;
 }
 
-.container{
-    text-align: center;
+#page-content-wrapper{
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 *{font-family: Roboto;
     font-style: normal;
-    font-weight: bold;
     font-size: 18px;
     line-height: 21px;
 }
@@ -34,3 +37,4 @@ body{background-color: #d7dbdb;}
     background: rgba(112, 217, 213, 0.5);
     border-radius: 30px;    
 }
+

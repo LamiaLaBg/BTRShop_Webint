@@ -68,7 +68,7 @@ function importImage(){
 }
 
 function displayLocation(){
-    navigator.geolocation.getCurrentPosition(drawMap)
+    navigator.geolocation.getCurrentPosition(drawMap);
 }
 
 

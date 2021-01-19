@@ -3,6 +3,7 @@ let sidebarWrapper = document.getElementById('wrapper');
 let video_add= document.getElementById('videoAdd')
 
 function main() {
+
     // check whether we are logged in or not
     var online= window.sessionStorage['online'] || "false";
     if(online == "true"){
@@ -14,6 +15,8 @@ function main() {
         document.getElementById("profile").style.display="none";
         document.getElementById("logout").style.display="none";
     }
+    //clear the values inside search bar
+    document.getElementById("myInput").value="";
     return false;
 
 }
@@ -29,21 +32,25 @@ function toggleDropdown(){
 
 
 //search bar function here
-function searchbar(){
+function searchbar(input){
     input = document.getElementById("myInput");
     const val  = input.value;
     var pro = data[val];
     var i = 0;
+    var mainnode = document.getElementById('articles');
+    //clear values
+    mainnode.querySelectorAll('*').forEach(n => n.remove());
     if (pro && i===0){
-        i=1;
+       i=1;
         for(j = 0; j< 2;j++){
             var key = Object.keys(pro)[j];
             //console.log(pro.key);
-        var mainnode = document.getElementById('articles');
+        
 
         //var linebreak = document.createElement('br');
         var div = document.createElement('div');  //main div element for each item
-        div.setAttribute('id','article'+ j);
+        div.setAttribute('id','article');
+        div.setAttribute('class', 'ml-4 mr-4')
         div.style.paddingTop = '50px';
 
         //create tags here
@@ -56,6 +63,7 @@ function searchbar(){
         var h1rate = document.createElement('h5');
         var text = document.createTextNode((j+1)+".\u00A0"+pro[key].title);
         var rate= document.createTextNode("Rating - "+pro[key].rating);
+
         h1titre.appendChild(text);
         h1rate.appendChild(rate);
 
@@ -87,6 +95,7 @@ function searchbar(){
         divDescription.appendChild(divDescriptionImg);
         divDescription.appendChild(divDescriptionText);
         div.appendChild(divDescription);
+        div.appendChild(document.createElement("br"));
 
 
         // adding image in divDescriptionImg
@@ -114,6 +123,7 @@ function searchbar(){
         //var buy = document.createElement('a');
         var buttonGoto= document.createElement('button');
         buttonGoto.setAttribute('class', 'btn btn-info')
+        buttonGoto.setAttribute('id', 'goto')
         buttonGoto.innerHTML='Go to website'
         //var textGoto = document.createTextNode('Go to website');
         var link = pro[key].website;
@@ -152,12 +162,12 @@ function searchbar(){
         
         //styling emoji image
         emojihappy.setAttribute("height", "10%");
-        emojihappy.setAttribute("class", "col-sm-1 left");
+        emojihappy.setAttribute("class", "col-sm-1 ");
 
 
         //adding cons here
         var emojiUnhappy = document.createElement('img');
-        emojiUnhappy.setAttribute('src',"/images/emoji-unhappy.jpeg");
+        emojiUnhappy.setAttribute('src',"/images/emoji-unhappy.png");
 
         //add cons title and the unhappy emoji
         divTitlespros_and_cons.appendChild(emojiUnhappy);
@@ -173,7 +183,7 @@ function searchbar(){
         div.appendChild(divTitlespros_and_cons);
         // creation of the div and the ul (list) of and  pros and cons div
         var divlistrow =  document.createElement('div');
-        divlistrow.setAttribute('id','listrowarticle'+ j);
+        divlistrow.setAttribute('id','listrowarticle');
         divlistrow.setAttribute('class','row justify-content-center');
 
         //pros ul
@@ -186,7 +196,7 @@ function searchbar(){
             li.style.margin= 0; 
             li.style.padding= 0;
         }
-        
+    
         //cons ul
         var ul2 = document.createElement('ul');
         var cons = pro[key].negative.split(",");
@@ -218,6 +228,8 @@ function searchbar(){
         div.appendChild(divlistrow);
         
 
+        
+
         //comment box
         //create the division for the comment
         var mandiv = document.createElement('div') //main div tag to store the comment box
@@ -228,9 +240,12 @@ function searchbar(){
         divcomment.setAttribute('id','divcomment'+ j);
         divcomment.setAttribute('class','row justify-content-center');
 
-        var p_bestCom = document.createElement('p');
+        var p_bestCom = document.createElement('strong');
         p_bestCom.setAttribute('class', 'col-8 left')
-        p_bestCom.appendChild(document.createTextNode('Best Comments'));
+        p_bestCom.appendChild(document.createElement("br"))
+        p_bestCom.appendChild(document.createElement("br"))
+
+        p_bestCom.appendChild(document.createTextNode('Best Comment'));
         divcomment.appendChild(p_bestCom);
 
 
@@ -240,7 +255,11 @@ function searchbar(){
         img_div.setAttribute("id", "img_div"+j);
         img_div.setAttribute('class','row justify-content-center');
         var girl = document.createElement('img');
+        if(j===0){
         girl.setAttribute('src',"/images/lamia_photo.jpeg");
+        }else{
+            girl.setAttribute('src',"/images/clara.jpeg");
+        }
         girl.setAttribute("class", "center");
         girl.setAttribute("height", "5%");
         img_div.appendChild(girl);
@@ -255,8 +274,8 @@ function searchbar(){
         //adding user name
         var usr = document.createElement('h6');
         var comment= document.createElement('h6');
-        usr.appendChild(document.createTextNode(pro[key].user+" says"))
-            comment.appendChild(document.createTextNode(pro[key].says))
+        usr.appendChild(document.createTextNode(pro[key].user))
+        comment.appendChild(document.createTextNode(pro[key].says))
         
         img_div.appendChild(usr);
         mandiv.appendChild(img_div);
@@ -277,8 +296,12 @@ function searchbar(){
         
 
         mainnode.appendChild(div); //append div to mainnode
-        //mainnode.appendChild(linebreak);
-        
+        // mainnode.appendChild(linebreak);
+        mainnode.appendChild(document.createElement("br"));
+        mainnode.appendChild(document.createElement("br"));
+
+
+
         }
         
     }

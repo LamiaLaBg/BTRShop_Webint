@@ -6,12 +6,7 @@
 color: #4dd0e1;
 }
 
-.footer-pos {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-  }
+
 
   video {
 	width:300px;
@@ -23,12 +18,35 @@ color: #4dd0e1;
 	padding: 6px;
 }
 ul{
-    border:1px solid #000;
-    margin:0; 
+    margin:10px; 
     padding:0;
 }
 
 li{
     margin:0;
     padding:0;
+}
+
+
+*{font-family: Roboto;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+
+#goto{
+    width: 167px;
+    height: 50px;
+    background: rgba(112, 217, 213, 0.5);
+    border-radius: 20px;
+    border:none; 
+    color: black;
+}
+
+#article{
+    border-radius: 5px;
+    background-color: rgba(196, 196, 196, 0.16);
+    border: 1px solid rgba(0, 0, 0, 0.24);
+
 }
