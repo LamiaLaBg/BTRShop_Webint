@@ -273,8 +273,7 @@ function searchbar(input){
 
         var p_bestCom = document.createElement('strong');
         p_bestCom.setAttribute('class', 'col-sm-8 left')
-        p_bestCom.appendChild(document.createElement("br"))
-        p_bestCom.appendChild(document.createElement("br"))
+   
 
         p_bestCom.appendChild(document.createTextNode('Best Comment'));
         divcomment.appendChild(p_bestCom);
