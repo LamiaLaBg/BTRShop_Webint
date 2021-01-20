@@ -1,6 +1,6 @@
 
 function goToSearch(){
-    document.location.href="index.html";
+    document.location.href="../../index.html";
     return false;
 }
 
@@ -22,7 +22,7 @@ function checkUser(){
             if(exist){
                 window.localStorage.setItem('loggedUser', currentUser);
                 window.localStorage.setItem('online', "true");
-                document.location.href="index.html"; //////change
+                goToSearch();
                 return false;
             }else{
                 alert("Incorrect email and/or password... Try again")
@@ -32,4 +32,3 @@ function checkUser(){
             return false;
 }
 
-document.querySelector("#loginBtn").addEventListener("submit", goToSearch)

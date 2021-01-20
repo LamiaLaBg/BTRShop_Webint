@@ -8,7 +8,7 @@ function createUser(){
     var pass= document.querySelector('#password').value;
     var passconf = document.querySelector('#passconf').value;
     var phonenum= "";
-    var imgprof="/images/generic-profile.png";
+    var imgprof="../images/generic-profile.png";
 
     var newUser=[firstname , lastname,  email, pass, passconf, phonenum,imgprof];
 
@@ -58,6 +58,8 @@ function createUser(){
 }
 
 function goToSearch(){
-    document.location.href="index.html";
+    
+    document.location.href="../index.html";
+    alert(document.location.href)
     return false;
 }

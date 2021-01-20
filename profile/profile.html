@@ -4,14 +4,13 @@
 	<head>
 		<meta charset="utf-8">
         <title>BTRShopCode</title>
-        <base href="/">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/x-icon" href="/images/Logo_betterShop.png">
-        <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="node_modules/jquery/dist/jquery.min.js" rel="script">
-        <link href="node_modules/bootstrap/dist/js/bootstrap.min.js" rel="script">
-        <link href='/profile/profile.css' rel="stylesheet">
-        <script src="/profile/profile.js"></script>
+        <link rel="icon" type="image/x-icon" href="../images/Logo_betterShop.png">
+        <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../node_modules/jquery/dist/jquery.min.js" rel="script">
+        <link href="../node_modules/bootstrap/dist/js/bootstrap.min.js" rel="script">
+        <link href='../profile/profile.css' rel="stylesheet">
+        <script src="../profile/profile.js"></script>
 
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
@@ -24,7 +23,7 @@
                 <!-- toggle -->
                 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ecfbfb;">
                     <a class="navbar-brand" href="#">
-                        <img src="/images/Logo_betterShop.png" width="30" height="30" class="d-inline-block" alt="">
+                        <img src="../images/Logo_betterShop.png" width="30" height="30" class="d-inline-block" alt="">
                         BTRShop
                         <span class="sr-only">(current)</span>
                     </a>
@@ -39,8 +38,8 @@
                 <div class="collapse navbar-collapse" id="dropdown" style = "display: none">
                     <div class="list-group-item list-group-item-action bg-light" id="name-dropdown">User name</div><!-- name of the user added here when logged in -->
                     <div class="list-group list-group-flush">
-                        <a href="contact/contact.html" class="list-group-item list-group-item-action bg-light">Contact</a>
-                        <a href="logout/logout.html" class="list-group-item list-group-item-action bg-light">Log Out</a>
+                        <a href="../contact/contact.html" class="list-group-item list-group-item-action bg-light">Contact</a>
+                        <a href="../logout/logout.html" class="list-group-item list-group-item-action bg-light">Log Out</a>
                     </div>
                 </div>
                 <!-- /#toggle -->
@@ -57,7 +56,7 @@
                 <form id="profile-form" class="text-center" style="width: 600px; margin:auto;"onsubmit="return updateInfo()">
                     
                     <div class="form-group">
-                        <img id="image"class="rounded-circle z-depth-2" alt="profile picture" width="140" height="140" src="/images/generic-profile.png"  data-holder-rendered="true">
+                        <img id="image"class="rounded-circle z-depth-2" alt="profile picture" width="140" height="140" src="../images/generic-profile.png"  data-holder-rendered="true">
 
                         <br>
                         <input type="file" onchange="importImage()">

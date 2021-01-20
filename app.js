@@ -136,65 +136,14 @@ function searchbar(input){
         
         divDescriptionText.appendChild(buttonGoto);
 
-        /*
-        buy.appendChild(textGoto);
-        buy.style.color = 'red';
-        p4.appendChild(buy);
-        */
-
+       
         //
 
         //creation the div pros and cons titles:
         var divTitlespros_and_cons =  document.createElement('div');
         divTitlespros_and_cons.setAttribute('id','divTitlespros_and_cons'+ j);
         divTitlespros_and_cons.setAttribute('class','row justify-content-center');
-        /*
-        //create pros division:
-        var divTitlespros =  document.createElement('div');
-        divTitlespros.setAttribute('id','divTitlespros'+ j);
-        divTitlespros.setAttribute('class','col-sm-4');
-        divTitlespros_and_cons.appendChild(divTitlespros)
-
-        //add pros title and the unhappy emoji:
-        var emojihappy = document.createElement('img');
-        emojihappy.setAttribute('src',"/images/emoji-happy.png");
         
-        divTitlespros.appendChild(emojihappy);
-        h_pros= document.createElement('h4');
-        h_pros.appendChild(document.createTextNode('PROS'));
-        //h_pros.setAttribute("class", "col-sm-1");
-        divTitlespros.appendChild(h_pros);
-        
-        //styling emoji image
-        emojihappy.setAttribute("height", "10%");
-        //emojihappy.setAttribute("class", "col-sm-1 left");
-        //emojihappy.style.maxWidth= "20%" ;
-
-        // create cons div
-        //creation the div pros and cons titles:
-        var divTitlescons =  document.createElement('div');
-        divTitlescons.setAttribute('id','divTitlescons'+ j);
-        divTitlescons.setAttribute('class','col-sm-4');
-        divTitlespros_and_cons.appendChild(divTitlescons);
-
-        //adding cons here
-        var emojiUnhappy = document.createElement('img');
-        emojiUnhappy.setAttribute('src',"/images/emoji-unhappy.jpeg");
-        //emojiUnhappy.style.maxWidth= "20%" ;
-        //add cons title and the unhappy emoji
-        divTitlescons.appendChild(emojiUnhappy);
-        h_cons= document.createElement('h4');
-        h_cons.appendChild(document.createTextNode('CONS'));
-        //h_cons.setAttribute("class", "col-sm-1");
-        divTitlescons.appendChild(h_cons);
-        
-        //styling emoji image
-        emojiUnhappy.setAttribute("height", "10%");
-        //emojiUnhappy.setAttribute("class", "col-sm-1");
-        
-        div.appendChild(divTitlespros_and_cons);
-        */
-       
         // creation of the div and the ul (list) of and  pros and cons div
         var divlistrow =  document.createElement('div');
         divlistrow.setAttribute('id','listrowarticle'+ j);
@@ -202,7 +151,7 @@ function searchbar(input){
         
         //add pros title and the unhappy emoji:
         var emojihappy = document.createElement('img');
-        emojihappy.setAttribute('src',"/images/emoji-happy.png");
+        emojihappy.setAttribute('src',"./images/emoji-happy.png");
         //styling emoji image
         emojihappy.setAttribute("height", "10%");
         h_pros= document.createElement('h4');
@@ -224,7 +173,7 @@ function searchbar(input){
 
         //add cons title and the unhappy emoji:
         var emojiUnhappy = document.createElement('img');
-        emojiUnhappy.setAttribute('src',"/images/emoji-unhappy.png");
+        emojiUnhappy.setAttribute('src',"./images/emoji-unhappy.png");
         //styling emoji image
         emojiUnhappy.setAttribute("height", "10%");
         h_cons= document.createElement('h4');
@@ -286,9 +235,9 @@ function searchbar(input){
         img_div.setAttribute('class','row justify-content-center');
         var girl = document.createElement('img');
         if(j===0){
-        girl.setAttribute('src',"/images/lamia_photo.jpeg");
+        girl.setAttribute('src',"./images/lamia_photo.jpeg");
         }else{
-            girl.setAttribute('src',"/images/clara.jpeg");
+            girl.setAttribute('src',"./images/clara.jpeg");
         }
         girl.setAttribute("class", "center");
         girl.setAttribute("height", "5%");
