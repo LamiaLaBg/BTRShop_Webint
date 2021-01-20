@@ -278,6 +278,8 @@ function searchbar(input){
         // mainnode.appendChild(linebreak);
         mainnode.appendChild(document.createElement("br"));
         mainnode.appendChild(document.createElement("br"));
+        mainnode.appendChild(document.createElement("br"));
+        mainnode.appendChild(document.createElement("br"));
 
 
 
