@@ -37,13 +37,14 @@ function createUser(){
         }
     }
 
-    users.push(user); //push at the end
+   
 
     if(!confirmation){
         alert("Passwords do not match!");
         document.querySelector('#password').value="";
         document.querySelector('#passconf').value="";
     }else if(exist){
+        users.push(user); //push at the end
         alert("You already have an account, we are logging you in!")
         localStorage.setItem('users', JSON.stringify(users));
         localStorage.setItem('online', "true");
@@ -52,6 +53,7 @@ function createUser(){
         return false;
 
     }else{
+        users.push(newUser);
         alert("New user is created");
         //store new user  
         localStorage.setItem('users', JSON.stringify(users));

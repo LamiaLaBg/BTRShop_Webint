@@ -19,14 +19,15 @@ function checkUser(){
         }
     }
 
-    users.push(user);
+   
     if(exist){
-        
+        users.push(user);
         localStorage.setItem('users', JSON.stringify(users));
         localStorage.setItem('online', "true");
         goToSearch();
         return false;
     }else{
+        users.push(newUser);
         alert("Incorrect email and/or password... Try again")
         loginform.querySelector('#email').value= "";
         loginform.querySelector('#password').value= "";
