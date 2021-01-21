@@ -3,9 +3,9 @@ let sidebarWrapper = document.getElementById('wrapper');
 let video_add= document.getElementById('videoAdd')
 
 function main() {
+    
 
-    // check whether we are logged in or not
-    var online= window.localStorage['online'] || "false";
+    var online= localStorage['online'] || "false";
     if(online == "true"){
         document.getElementById("signin").style.display="none";
         users=JSON.parse(localStorage.getItem('users')) ;        

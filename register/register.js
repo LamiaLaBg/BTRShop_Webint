@@ -1,5 +1,6 @@
 var users=[];
 
+
 function createUser(){
     //new user info
     var firstname= document.querySelector('#firstname').value;
@@ -12,6 +13,7 @@ function createUser(){
 
     var newUser=[firstname , lastname,  email, pass, passconf, phonenum,imgprof];
 
+    
 
     //get all registered users
     users= JSON.parse(localStorage.getItem('users')) || [];
@@ -35,7 +37,7 @@ function createUser(){
         }
     }
 
-    users.push(newUser); //push at the end
+    users.push(user); //push at the end
 
     if(!confirmation){
         alert("Passwords do not match!");
@@ -43,23 +45,25 @@ function createUser(){
         document.querySelector('#passconf').value="";
     }else if(exist){
         alert("You already have an account, we are logging you in!")
-        window.localStorage.setItem('users', JSON.stringify(users));
-        window.localStorage.setItem('online', "true");
+        localStorage.setItem('users', JSON.stringify(users));
+        localStorage.setItem('online', "true");
+        //go to search for products
         goToSearch();
+        return false;
+
     }else{
         alert("New user is created");
         //store new user  
-        window.localStorage.setItem('users', JSON.stringify(users));
-        window.localStorage.setItem('online', "true");
-        // //go to add search for products
+        localStorage.setItem('users', JSON.stringify(users));
+        localStorage.setItem('online', "true");
+        // //go to search for products
         goToSearch();
+        return false;
     }
-    return false;
 }
 
+
 function goToSearch(){
-    
     document.location.href="../index.html";
-    alert(document.location.href)
     return false;
 }
